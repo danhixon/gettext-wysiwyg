@@ -18,7 +18,7 @@ msgstr ""
 
 #: app/controllers/application.rb:24
 msgid "Uh Oh!"
-msgstr "Uh Oh!"
+msgstr "Oh No!"
 
 #: app/controllers/application.rb:25
 msgid "Please correct the following problems:"
@@ -63,3 +63,11 @@ msgstr ""
 #: app/views/order_wizard/_summary.html.erb:24
 msgid "Date of Birth"
 msgstr "Date of Birth"
+
+#: app/views/home/_faq_english.html.erb:55 app/views/home/faq.html.erb:60
+msgid ""
+"At Blue Casa we believe in passing savings onto you and we have done the "
+"same with the Mexico Unlimited plan."
+msgstr ""
+"En Blue Casa creemos en pasarle los ahorros a usted y hemos hecho lo mismo "
+"con el plan de México Ilimitado."

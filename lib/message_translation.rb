@@ -11,22 +11,22 @@ class MessageTranslation
   end
   #default behavior is to use the same file:
   def po_file_output_path
-    @po_file_output_path || = po_file_path
+    @po_file_output_path ||= po_file_path
   end
   def update_translation(msgid,new_translation)
-    #puts po_path
-    p = PoFile.new
-    File.open(po_file_path, 'r').each_line do | line |
-      p.add_info(line)
-    end
-
-    p.find_replace(msgid, new_translation)
-
-    # print them all back out
-    temp_po_path = File.open(po_file_output_path, 'w')
-    temp_po_path.puts p
-    temp_po_path.close()
-
+#    #puts po_path
+#    p = PoFile.new
+#    File.open(po_file_path, 'r').each_line do | line |
+#      p.add_info(line)
+#    end
+#
+#    p.find_replace(msgid, new_translation)
+#
+#    # print them all back out
+#    temp_po_path = File.open(po_file_output_path, 'w')
+#    temp_po_path.puts p
+#    temp_po_path.close()
+#
   end
   private
   def application_root
