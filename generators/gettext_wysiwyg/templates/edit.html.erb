@@ -1,0 +1,6 @@
+<h2>Edit this message</h2>
+<%% form_for(:message_translation,:action=>'update') do |f| %>
+	<p>Message ID<br /><textarea disabled><%%= params[:id] %></textarea></p>
+	<p>Translation<br /><%%= f.text_area :translation %></p>
+	<%%= f.submit "Save" %>
+<%% end %>

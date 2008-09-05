@@ -1,0 +1,5 @@
+require 'rubygems'
+require 'gettext'
+require 'test/unit'
+require 'mocha'
+require "#{File.dirname(__FILE__)}" + '/../lib/message_translation'

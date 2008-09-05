@@ -1,0 +1,26 @@
+Description:
+    This will add a MessageTranslations controller as well as two views 
+    for interacting with your translations on your website.
+
+    Besure to add something like this to your stylesheet:
+        .gettext:hover { border:solid 1px red; padding:-1px -1px;}
+	
+	Since this will probably end up making your site look terrible you need
+	run in development environment AND explicitly TURN IT ON by adding 
+		$gettext_wysiwyg = true
+	near the top of your environment.rb.
+	
+    Tricky stuff:
+        + Link Text - since all gettext becomes clickable - the links either work or the text is not editable
+        + Title bar - I recommend calling the GetText.gettext() method instead of _()
+        + Error messages - The model names don't seem to call the underscore method.
+
+
+Example:
+    ./script/generate gettext_wysiwyg MessageTranslations
+
+    This will create:
+        app/controllers/message_translations_controller.rb
+        app/views/message_translations/edit.html.erb 
+        app/views/message_translations/index.html.erb
+
