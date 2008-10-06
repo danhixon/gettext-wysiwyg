@@ -26,7 +26,4 @@ Tricky stuff:
     + Error messages - The model names don't seem to call the underscore method.
 You'll need to use the index action or a traditional po editor to edit these "tricky" messages
 
-After saving 
-
-
 Copyright (c) 2008 [Dan Hixon], released under the MIT license
