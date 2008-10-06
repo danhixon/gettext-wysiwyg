@@ -15,7 +15,7 @@ class TestMessageTranslation < Test::Unit::TestCase
   end
   def test_entry_count
     m = MessageTranslation.new("Uh Oh!")
-    m.po_file_path = "test/fixtures/english.po"
+    m.po_file_path = "fixtures/english.po"
     m.po_file_output_path = m.po_file_path + ".tmp"
     assert File.exists?(m.po_file_path)
     
