@@ -7,7 +7,7 @@ class GettextWysiwygGenerator < Rails::Generator::NamedBase
       m.directory "app/views/#{controller_name}/"
       m.template 'index.html.erb',"app/views/#{controller_name}/index.html.erb"
       m.template 'edit.html.erb',"app/views/#{controller_name}/edit.html.erb"
-      
+    
     end
     
     recorded_session

@@ -1,13 +1,32 @@
 GettextWysiwyg
 ==============
 
-Introduction goes here.
+Rails plugin that turns your GetText-enabled website into a what-you-see-is-what-you-get editor for text.  See some text that needs to change?  Click on it and edit it right in your browser.  Set this up to run on a server and give your product/marketing team access to it so you don't have to make copy changes again!
+
+Requirements:
+	* GetText gem 
+	(sudo gem install gettext)
+	* gettext_localize plugin 
+	(script/plugin install svn://rubyforge.org/var/svn/gettextlocalize/trunk/gettext_localize)
+
+Configuration:
+	1. Generate controller & views:
+	./script/generate gettext_wysiwyg MessageTranslations
+	2. Enable gettext_wysiwig, add this to environment.rb:
+	$gettext_wysiwyg = true
+	3. Ensure these conventions are followed:
+		* Po file directory is #{RAILS_ROOT}/po/#{locale}
+		* URLs prefixed with lang param ':lang/:controller/:action/:id'
+	4. It is helpful to add this to your stylesheet:
+        .gettext:hover { border:solid 1px red; padding:-1px -1px;}
+
+Tricky stuff:
+    + Link Text - since all gettext becomes clickable - the links either work or the text is not editable
+    + Title bar - I recommend calling the GetText.gettext() method instead of _()
+    + Error messages - The model names don't seem to call the underscore method.
+You'll need to use the index action or a traditional po editor to edit these "tricky" messages
+
+After saving 
 
 
-Example
-=======
-
-Example goes here.
-
-
-Copyright (c) 2008 [name of plugin creator], released under the MIT license
+Copyright (c) 2008 [Dan Hixon], released under the MIT license

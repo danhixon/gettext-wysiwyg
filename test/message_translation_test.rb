@@ -18,9 +18,6 @@ class TestMessageTranslation < Test::Unit::TestCase
     m.po_file_path = "fixtures/english.po"
     m.po_file_output_path = m.po_file_path + ".tmp"
     assert File.exists?(m.po_file_path)
-    
-    
-    
   end
   
 end
