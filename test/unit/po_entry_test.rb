@@ -1,6 +1,6 @@
-require 'test_helper'
+require File.dirname(__FILE__) + "/../test_helper"
 
-class TestPoEntry < Test::Unit::TestCase
+class PoEntryTest < Test::Unit::TestCase
   def setup
     @po_entry = [
       "#: app/views/home/_faq_english.html.erb:55 app/views/home/faq.html.erb:60",

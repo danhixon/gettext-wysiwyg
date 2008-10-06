@@ -1,8 +1,8 @@
-require 'test_helper'
+require File.dirname(__FILE__) + "/../test_helper"
 
-class TestPoFile < Test::Unit::TestCase
+class PoFileTest < Test::Unit::TestCase
   def setup
-    file_name = File.dirname(__FILE__) + "/fixtures/english.po"
+    file_name = File.dirname(__FILE__) + "/../fixtures/english.po"
     @file = PoFile.new(file_name)
   end
   def test_line_count
@@ -39,7 +39,7 @@ class TestPoFile < Test::Unit::TestCase
   end
   def test_save
     #save file with changes as english.po.test:
-    file_name = File.dirname(__FILE__) + "/fixtures/english.po.test"
+    file_name = File.dirname(__FILE__) + "/../fixtures/english.po.test"
     @file.update_translation("Uh Oh!","Whoopsie!")
     @file.save(file_name)
     assert File.exists?(file_name)
