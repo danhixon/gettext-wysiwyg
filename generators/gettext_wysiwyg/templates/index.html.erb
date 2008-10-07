@@ -5,14 +5,14 @@
 		<th>Translation</th>		
 	</tr>
 	
-<% @message_translations.each do |po_entry| %>
-	<% next if po_entry.msgid=="" %>
+<%% @message_translations.each do |po_entry| %>
+	<%% next if po_entry.msgid=="" %>
 	<tr>
 		<td>
-			<a href="<%= "/#{GettextLocalize.locale}/message_translations/edit?msgid=#{CGI::escape(po_entry.msgid)}" %>">edit</a>
+			<a href="<%%= "/#{GettextLocalize.locale}/message_translations/edit?msgid=#{CGI::escape(po_entry.msgid)}" %>">edit</a>
 		</td>
-		<td><%= po_entry.msgid %></td>
-		<td><%= po_entry.msgstr %></td>
+		<td><%%= po_entry.msgid %></td>
+		<td><%%= po_entry.msgstr %></td>
 	</tr>
-<% end %>
+<%% end %>
 </table>
