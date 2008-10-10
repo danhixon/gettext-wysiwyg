@@ -9,7 +9,7 @@
 	<%% next if po_entry.msgid=="" %>
 	<tr>
 		<td>
-			<a href="<%%= "/#{GettextLocalize.locale}/message_translations/edit?msgid=#{CGI::escape(po_entry.msgid)}" %>">edit</a>
+			<a href="<%%= "/#{GettextLocalize.locale}/po_entries/edit?msgid=#{CGI::escape(po_entry.msgid)}" %>">edit</a>
 		</td>
 		<td><%%= po_entry.msgid %></td>
 		<td><%%= po_entry.msgstr %></td>

@@ -8,14 +8,14 @@ class PoEntriesController < ApplicationController
   end
   def update
     po = PoFile.new
-    if po.update_translation(params[:msgid],params[:message_translation][:translation])
+    if po.update_translation(params[:msgid],params[:po_entry][:msgstr])
       po.write_file
       system 'rake gettext:makemo'
       flash[:notice] = _("Translation updated!")
-      redirect_to "/#{params[:lang]}/message_translations/edit?msgid=#{CGI::escape(params[:msgid])}"
+      redirect_to "/#{params[:lang]}/po_entries/show?msgid=#{CGI::escape(params[:msgid])}"
       #TODO: it might make more sense to redirect to a show action... 
     else
-      flash[:notice] = "Message not updated!<br />Message Not found.  Try running 'rake gettext:updatepo'"
+      flash[:notice] = "Message '#{params[:msgid]}' not updated!<br />Message Not found.  Try running 'rake gettext:updatepo'"
       render :action => :edit
     end
   
