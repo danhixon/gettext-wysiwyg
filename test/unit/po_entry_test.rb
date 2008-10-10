@@ -11,6 +11,10 @@ class PoEntryTest < Test::Unit::TestCase
       "msgstr \"\"",
       "\"En Blue Casa creemos en pasarle los ahorros a usted y hemos hecho lo mismo \"",
       "\"con el plan de México Ilimitado.\""]
+      
+      file_name = File.dirname(__FILE__) + "/../fixtures/english.po"
+      @file = PoFile.new(file_name)
+      
   end
   def test_msgid
     p = PoEntry.new(@po_entry)

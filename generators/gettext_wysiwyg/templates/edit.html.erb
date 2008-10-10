@@ -1,7 +1,7 @@
 <h2>Edit this message</h2>
-<%% form_for(:message_translation,:url => { :action => "update",:msgid=>params[:msgid] }) do |f| %>
+<%% form_for(:po_entry,:url => { :action => "update",:msgid=>params[:msgid] }) do |f| %>
 	<p>Message ID<br /><textarea disabled><%%= params[:msgid] %></textarea></p>
-	<p>Translation<br /><%%= f.text_area :translation %></p>
+	<p>Translation<br /><%%= f.text_area :msgstr %></p>
 	<%%= f.submit "Save" %>
 <%% end %>
 <a href="/<%%= params[:lang] %>/message_translations">view all</a>

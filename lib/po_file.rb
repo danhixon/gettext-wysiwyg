@@ -4,11 +4,12 @@
 
 class PoFile
   attr_accessor :po_file_path
-  def initialize(file_path)
-    self.po_file_path = file_path
+  def initialize(file_path=nil)
+    self.po_file_path = file_path || PoFile.default_po_file_path
     read_file
   end
   def read_file
+    #TODO - refactor to read file directly into po_entry array instead of this two step process.
     @all_lines = []
     @blank_indicies = []
     File.open(po_file_path, 'r').each_line do |line|
@@ -18,6 +19,7 @@ class PoFile
     end
     @blank_indicies << @all_lines.size
   end
+  
   def line_count
     @all_lines.size
   end
@@ -43,7 +45,7 @@ class PoFile
     end
     return nil
   end
-  def save(file_path=nil)
+  def write_file(file_path=nil)
     file_path ||= self.po_file_path
     lines = file_lines
     File.open(file_path,'w') do  |f|
@@ -52,9 +54,11 @@ class PoFile
       end
     end
   end
+  
   def headers
     @all_lines[0...@blank_indicies[0]]
   end
+  
   def file_lines
     return @output_lines unless @output_lines.nil?
     @output_lines = headers
@@ -66,6 +70,7 @@ class PoFile
     #removes the final blank line:
     @output_lines[0...@output_lines.size-1]
   end
+  
   protected 
   def get_entries
     e = []
@@ -74,6 +79,20 @@ class PoFile
     end
     e
   end
+  
+  def self.default_po_file_path
+   #TODO: pull this out of a config file if present
+   File.join(application_root,'po',locale_dir, application_name+'.po')
+  end
 
+  def self.application_root
+    defined?(RAILS_ROOT) ? RAILS_ROOT : "../../../"
+  end
+  def self.locale_dir
+    GettextLocalize.locale.split('_')[0]
+  end
+  def self.application_name
+    GettextLocalize::app_name
+  end
 
 end

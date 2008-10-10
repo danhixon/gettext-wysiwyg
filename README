@@ -11,7 +11,7 @@ Requirements:
 
 Configuration:
 	1. Generate controller & views:
-	./script/generate gettext_wysiwyg MessageTranslations
+	./script/generate gettext_wysiwyg PoEntries
 	2. Enable gettext_wysiwig, add this to environment.rb:
 	$gettext_wysiwyg = true
 	3. Ensure these conventions are followed:
@@ -21,7 +21,6 @@ Configuration:
         .gettext:hover { border:solid 1px red; padding:-1px -1px;}
 
 Tricky stuff:
-    + Link Text - since all gettext becomes clickable - the links either work or the text is not editable
     + Title bar - I recommend calling the GetText.gettext() method instead of _()
     + Error messages - The model names don't seem to call the underscore method.
 You'll need to use the index action or a traditional po editor to edit these "tricky" messages

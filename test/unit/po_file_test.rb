@@ -41,7 +41,7 @@ class PoFileTest < Test::Unit::TestCase
     #save file with changes as english.po.test:
     file_name = File.dirname(__FILE__) + "/../fixtures/english.po.test"
     @file.update_translation("Uh Oh!","Whoopsie!")
-    @file.save(file_name)
+    @file.write_file(file_name)
     assert File.exists?(file_name)
     
     #read in new file:

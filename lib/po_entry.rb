@@ -37,6 +37,8 @@ class PoEntry
     end
     
   end
+
+  
   def to_a
     a = @comments
     a << "msgid \"#{@msgid}\""
