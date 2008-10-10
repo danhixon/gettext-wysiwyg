@@ -17,7 +17,7 @@ Description:
 	You'll need to use the index action or a traditional po editor to edit these "tricky" messages
 
 Example:
-    ./script/generate gettext_wysiwyg
+    ./script/generate gettext_wysiwyg PoEntries
 
     This will create:
         app/controllers/message_translations_controller.rb
