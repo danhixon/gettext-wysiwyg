@@ -1,0 +1,11 @@
+<h2>Message</h2>
+	<p>
+		<strong>Message ID:</strong><br />
+		<%%= params[:msgid] %>
+	</p>
+	<p>
+		<strong>Current Translation:</strong><br />
+		<%%= GetText.gettext(params[:msgid]) %>
+	</p>
+
+<a href="/<%%= params[:lang] %>/message_translations">view all</a>
