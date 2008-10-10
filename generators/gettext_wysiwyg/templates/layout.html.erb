@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>PO Entries Editor</title>
+		<!-- feel free to replace this with your own style sheet. -->
+		<style>
+			body { color:#444; font-family:Arial, Helvetica;font-size:12px; }
+			p { padding:0px;margin:3px; }
+			h2 { padding:3px;}
+			td { font-size:12px; }
+			.flash { color:green; }
+		</style>
+		
+	</head>
+	<body>
+		<p class="flash"><%%= flash[:notice] %></p>
+		<%%= yield %>
+	</body>
+</html>
